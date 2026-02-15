@@ -1,45 +1,45 @@
 # Ürün – Satış – Stok Takip Sistemi (Python + SQLite)
 
-Bu projede Python ve SQL birlikte kullanılarak basit bir stok ve satış takip sistemi geliştirildi.
+Bu proje, Python ve SQLite kullanılarak hazırlanmış basit bir ürün / stok / satış takip sistemidir.
 
-Amaç, SQL komutlarını ezberlemek yerine Python ile gerçek bir senaryo içinde kullanmayı öğrenmekti.
+Bu projeyi yapma amacım SQL komutlarını ezberlemek yerine, Python içinde gerçek bir senaryo ile tekrar etmekti.
 
-## Projede Neler Yapılıyor?
+## Projede Neler Yapılabiliyor?
 
-- Ürün eklenebiliyor
-- Ürünler listelenebiliyor
-- Satış yapılabiliyor
-- Satış yapıldığında stok otomatik düşüyor
-- Yapılan satışlar listelenebiliyor
-- Toplam ciro hesaplanabiliyor
-- Ürün silme ve güncelleme işlemleri yapılabiliyor
-- En çok satılan ürün bulunabiliyor
+- Ürün ekleme
+- Ürünleri listeleme
+- Satış yapma
+- Satış yapınca stok düşürme
+- Satışları listeleme
+- Toplam ciroyu hesaplama
+- Ürün silme (ID ile)
+- Ürün güncelleme (fiyat ve stok)
+- En çok satılan ürünü bulma
 
-## Kullanılan Teknolojiler
+## Kullanılan Yapılar
 
-- Python
-- SQLite (`sqlite3`)
-- SQL (CREATE, INSERT, SELECT, UPDATE, DELETE, JOIN)
+- Python (`sqlite3`)
+- SQLite veritabanı
+- SQL komutları:
+  - CREATE TABLE
+  - INSERT
+  - SELECT
+  - UPDATE
+  - DELETE
+  - JOIN
+  - SUM / GROUP BY
 
-ORM kullanılmadı.  
-Tüm SQL sorguları string olarak yazıldı.
+## Kurallar
 
-## Neden SQLite?
+- ORM kullanılmadı (SQLAlchemy yok)
+- SQL sorguları string olarak yazıldı
+- Her fonksiyon tek iş yapacak şekilde yazıldı
+- Veritabanı işlemlerinde `commit()` unutulmadı
 
-- Ekstra kurulum gerektirmiyor
-- Küçük projeler için yeterli
-- SQL mantığını öğrenmek için ideal
+## Çalıştırma
 
-## Örnek Kullanım
+Terminalden dosyayı çalıştır:
 
-```python
-create_tables()
+```bash
+python stok_satis_sistemi.py
 
-add_product("Laptop", 25000, 10)
-add_product("Mouse", 500, 50)
-
-make_sale(1, 2)
-make_sale(2, 5)
-
-list_products()
-list_sales()
